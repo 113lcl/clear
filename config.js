@@ -53,7 +53,7 @@ export const LAYERS = [
   // Big tile + label
   {
     type: "image",
-    src: "assets/tile-1.svg",
+    src: "assets/tile-1.jpg",
     class: "tile big",
     speed: 0.55,
     width: 420,
@@ -78,6 +78,7 @@ export const LAYERS = [
     y: 60,
   },
 
+
   // Spinning tile
   {
     type: "image",
@@ -94,12 +95,12 @@ export const LAYERS = [
   // Animated frames
   {
     type: "image",
-    src: "assets/frame-1.svg",
+    src: "assets/frames/ezgif-frame-001.jpg",
     class: "tile frames",
     speed: 0.95,
     width: 320,
     height: 320,
-    frames: ["frame-1.svg", "frame-2.svg", "frame-3.svg"],
+    frames: ["frames/ezgif-frame-001.jpg", "frames/ezgif-frame-002.jpg", "frames/ezgif-frame-003.jpg", "frames/ezgif-frame-004.jpg", "frames/ezgif-frame-005.jpg", "frames/ezgif-frame-006.jpg", "frames/ezgif-frame-007.jpg", "frames/ezgif-frame-008.jpg", "frames/ezgif-frame-009.jpg", "frames/ezgif-frame-010.jpg"],
     fps: 5,
     x: 3120,
     y: 380,
@@ -115,10 +116,10 @@ export const LAYERS = [
     y: 60,
   },
 
-  // Video placeholder
+  // Video as WebM
   {
     type: "video",
-    src: "videos/video-1.mp4",
+    src: "videos/video-1.webm",
     poster: "assets/video-poster.svg",
     class: "tile video",
     speed: 0.85,
@@ -144,7 +145,7 @@ export const LAYERS = [
   // Wide strip
   {
     type: "image",
-    src: "assets/strip-1.svg",
+    src: "assets/strip-1.jpg",
     class: "tile wide",
     speed: 0.45,
     width: 520,
@@ -178,7 +179,7 @@ export const LAYERS = [
   // Round badge
   {
     type: "image",
-    src: "assets/badge-spinning.svg",
+    src: "assets/spinning.jpg",
     class: "tile round spinning",
     speed: 1.15,
     width: 260,
@@ -194,7 +195,7 @@ export const LAYERS = [
     class: "copy small",
     speed: 0.7,
     x: 4880,
-    y: 240,
+    y: 220,
   },
 
   // Tag
@@ -225,7 +226,7 @@ export const LAYERS = [
     content: "GET STARTED",
     class: "tag alt",
     speed: 0.8,
-    x: 5240,
+    x: 6240,
     y: 720,
   },
 
@@ -257,8 +258,8 @@ export const LAYERS = [
     content: "500+ Projects\n100+ Brands",
     class: "copy small",
     speed: 0.85,
-    x: 6570,
-    y: 580,
+    x: 5230,
+    y: 450,
   },
 
   // Accent badge
@@ -279,8 +280,18 @@ export const LAYERS = [
     content: "READY TO CREATE?",
     class: "tag",
     speed: 0.95,
-    x: 7200,
-    y: 480,
+    x: 5700,
+    y: 380,
+  },
+
+  // Clear as always
+  {
+    type: "image",
+    src: "assets/clear as always.png",
+    class: "layer",
+    speed: 0.8,
+    x: 6800,
+    y: 250,
   },
 ];
 

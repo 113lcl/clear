@@ -44,13 +44,12 @@ function generateLayers() {
       el.textContent = item.content;
     } else if (item.type === "video") {
       el = document.createElement("video");
-      if (item.src) el.src = item.src;
-      if (item.poster) el.poster = item.poster;
       el.muted = true;
-      el.autoplay = true;
+      el.loop = true;
       el.playsinline = true;
-      el.preload = "auto";
-      if (item.loop) el.loop = true;
+      el.autoplay = true;
+      el.src = item.src;
+      if (item.poster) el.poster = item.poster;
     }
 
     el.classList.add("layer", ...(item.class ? item.class.split(" ") : []));
@@ -142,24 +141,7 @@ function updateFrames(now) {
   });
 }
 
-function updateVideo(progress) {
-  layers.forEach((layer) => {
-    if (!(layer instanceof HTMLVideoElement)) {
-      return;
-    }
 
-    if (!layer.dataset.scrub) {
-      return;
-    }
-
-    if (layer.readyState < 1 || !layer.duration) {
-      return;
-    }
-
-    const time = progress * layer.duration;
-    layer.currentTime = time;
-  });
-}
 
 function render(now) {
   state.current += (state.target - state.current) * state.ease;
@@ -188,7 +170,6 @@ function render(now) {
 
   updateTitle(now, progress);
   updateFrames(now);
-  updateVideo(progress);
 
   if (startScreen) {
     const fade = clamp(1 - progress * 6, 0, 1);

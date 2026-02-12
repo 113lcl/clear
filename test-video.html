@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Test</title>
+  <style>
+    video {
+      width: 600px;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Direct Video Test</h1>
+  <video controls loop>
+    <source src="videos/video-1.mp4" type="video/mp4">
+  </video>
+  
+  <script>
+    const video = document.querySelector('video');
+    video.addEventListener('loadedmetadata', () => {
+      console.log('Video loaded:', video.duration, 'seconds');
+    });
+    video.addEventListener('error', (e) => {
+      console.error('Video error:', e);
+    });
+  </script>
+</body>
+</html>
