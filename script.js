@@ -47,8 +47,10 @@ function generateLayers() {
       if (item.src) el.src = item.src;
       if (item.poster) el.poster = item.poster;
       el.muted = true;
+      el.autoplay = true;
       el.playsinline = true;
       el.preload = "auto";
+      if (item.loop) el.loop = true;
     }
 
     el.classList.add("layer", ...(item.class ? item.class.split(" ") : []));
@@ -171,11 +173,17 @@ function render(now) {
     const speed = Number(layer.dataset.speed || "1");
     const baseX = Number(layer.dataset.x || "0");
     const baseY = Number(layer.dataset.y || "0");
-    const rotate = Number(layer.dataset.rotate || "0");
     const offsetX = baseX - state.current * speed;
-    const rotation = rotate * progress;
 
-    layer.style.transform = `translate3d(${offsetX}px, ${baseY}px, 0) rotate(${rotation}deg)`;
+    // For spinning elements, add continuous rotation based on time
+    if (layer.classList.contains("spinning")) {
+      const spinRotation = (now / 40) % 360; // Complete rotation every 4 seconds
+      layer.style.transform = `translate3d(${offsetX}px, ${baseY}px, 0) rotate(${spinRotation}deg)`;
+    } else {
+      const rotate = Number(layer.dataset.rotate || "0");
+      const rotation = rotate * progress;
+      layer.style.transform = `translate3d(${offsetX}px, ${baseY}px, 0) rotate(${rotation}deg)`;
+    }
   });
 
   updateTitle(now, progress);

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520">
+  <defs>
+    <radialGradient id="spinGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#14110f"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Outer circle -->
+  <circle cx="260" cy="260" r="250" fill="url(#spinGrad)"/>
+  
+  <!-- Mid circle -->
+  <circle cx="260" cy="260" r="200" fill="#fef6ee" opacity="0.9"/>
+  
+  <!-- Inner circle -->
+  <circle cx="260" cy="260" r="140" fill="#d94f3d"/>
+  
+  <!-- Rotation markers (12 sectors to see rotation) -->
+  <g stroke="#fff" stroke-width="4" fill="none">
+    <!-- 12 o'clock marker (thick) -->
+    <line x1="260" y1="40" x2="260" y2="80" stroke-width="6"/>
+    
+    <!-- 3 o'clock marker -->
+    <line x1="480" y1="260" x2="440" y2="260" stroke-width="5"/>
+    
+    <!-- 6 o'clock marker -->
+    <line x1="260" y1="480" x2="260" y2="440" stroke-width="5"/>
+    
+    <!-- 9 o'clock marker -->
+    <line x1="40" y1="260" x2="80" y2="260" stroke-width="5"/>
+  </g>
+  
+  <!-- Center dot -->
+  <circle cx="260" cy="260" r="20" fill="#14110f"/>
+  
+  <!-- Radial lines for better rotation visibility -->
+  <g stroke="#ffffff" stroke-width="2" opacity="0.6">
+    <line x1="260" y1="260" x2="380" y2="160"/>
+    <line x1="260" y1="260" x2="360" y2="360"/>
+    <line x1="260" y1="260" x2="160" y2="360"/>
+  </g>
+</svg>

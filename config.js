@@ -46,7 +46,7 @@ export const LAYERS = [
     speed: 0.9,
     width: 520,
     height: 720,
-    x: 1060,  // Manual horizontal position
+    x: 1560,  // Manual horizontal position
     y: 40,   // Manual vertical position
   },
 
@@ -58,7 +58,7 @@ export const LAYERS = [
     speed: 0.55,
     width: 420,
     height: 420,
-    x: 1620,
+    x: 1820,
     y: 120,
   },
   {
@@ -118,7 +118,7 @@ export const LAYERS = [
   // Video placeholder
   {
     type: "video",
-    src: "",
+    src: "videos/video-1.mp4",
     poster: "assets/video-poster.svg",
     class: "tile video",
     speed: 0.85,
@@ -126,6 +126,7 @@ export const LAYERS = [
     height: 260,
     x: 3500,
     y: 490,
+    loop: true,
   },
 
   // Tall tile
@@ -149,7 +150,7 @@ export const LAYERS = [
     width: 520,
     height: 260,
     x: 3600,
-    y: 390,
+    y: 275,
   },
 
   // Big poster
@@ -177,12 +178,11 @@ export const LAYERS = [
   // Round badge
   {
     type: "image",
-    src: "assets/badge-1.svg",
-    class: "tile round",
+    src: "assets/badge-spinning.svg",
+    class: "tile round spinning",
     speed: 1.15,
     width: 260,
     height: 260,
-    rotate: 360,
     x: 4800,
     y: 200,
   },
@@ -227,6 +227,60 @@ export const LAYERS = [
     speed: 0.8,
     x: 5240,
     y: 720,
+  },
+
+  // Large statement
+  {
+    type: "text",
+    content: "DIGITAL-FIRST",
+    class: "label",
+    speed: 1.0,
+    x: 5800,
+    y: 100,
+  },
+
+  // Showcase image
+  {
+    type: "image",
+    src: "assets/poster-1.svg",
+    class: "tile big",
+    speed: 0.65,
+    width: 420,
+    height: 420,
+    x: 6280,
+    y: 240,
+  },
+
+  // Statistics/numbers
+  {
+    type: "text",
+    content: "500+ Projects\n100+ Brands",
+    class: "copy small",
+    speed: 0.85,
+    x: 6570,
+    y: 580,
+  },
+
+  // Accent badge
+  {
+    type: "image",
+    src: "assets/badge-spinning.svg",
+    class: "tile round spinning",
+    speed: 1.2,
+    width: 260,
+    height: 260,
+    x: 6920,
+    y: 570,
+  },
+
+  // Final tagline
+  {
+    type: "text",
+    content: "READY TO CREATE?",
+    class: "tag",
+    speed: 0.95,
+    x: 7200,
+    y: 480,
   },
 ];
 

@@ -219,6 +219,10 @@ body {
   animation: float 3.2s ease-in-out infinite alternate;
 }
 
+.spinning {
+  /* Spinning class - rotation handled by JavaScript */
+}
+
 .frames {
   border-radius: 24px;
 }
