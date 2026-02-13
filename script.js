@@ -125,7 +125,12 @@ function updateFrames(now) {
 
     const fps = Number(layer.dataset.fps || "6");
     const list = frames.split(",").map((item) => item.trim());
-    const index = Math.floor((now / 1000) * fps) % list.length;
+    
+    // Ping-pong animation (back and forth)
+    const pingPongLength = (list.length - 1) * 2;
+    const rawPosition = Math.floor((now / 1000) * fps) % pingPongLength;
+    const index = rawPosition < list.length ? rawPosition : (pingPongLength - rawPosition);
+    
     const prevIndex = frameState.get(layer);
 
     if (prevIndex === index) {
@@ -177,11 +182,21 @@ function render(now) {
   }
 
   if (endScreen) {
-    const start = 0.76;
-    const end = 0.94;
+    const start = 0.80;
+    const end = 0.98;
     const reveal = clamp((progress - start) / (end - start), 0, 1);
     endScreen.style.opacity = reveal.toFixed(3);
     endScreen.style.pointerEvents = reveal > 0.9 ? "auto" : "none";
+    
+    // Move curtain to reveal end screen
+    const curtain = document.getElementById("curtain");
+    if (curtain) {
+      const curtainImg = curtain.querySelector("img");
+      if (curtainImg) {
+        const offset = reveal * 100; // Move from 0% to 100% (off screen to the right)
+        curtainImg.style.transform = `translateX(${offset}%)`;
+      }
+    }
   }
 
   requestAnimationFrame(render);

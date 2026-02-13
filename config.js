@@ -82,7 +82,7 @@ export const LAYERS = [
   // Spinning tile
   {
     type: "image",
-    src: "assets/tile-2.svg",
+    src: "assets/logo.png",
     class: "tile spin",
     speed: 1.1,
     width: 320,
@@ -195,7 +195,7 @@ export const LAYERS = [
     class: "copy small",
     speed: 0.7,
     x: 4880,
-    y: 220,
+    y: 620,
   },
 
   // Tag
@@ -284,14 +284,14 @@ export const LAYERS = [
     y: 380,
   },
 
-  // Clear as always
+  // smooth and swift
   {
     type: "image",
-    src: "assets/clear as always.png",
+    src: "assets/text2.png",
     class: "layer",
-    speed: 0.8,
-    x: 6800,
-    y: 250,
+    speed: 0.9,
+    x: 7400,
+    y: 850,
   },
 ];
 
@@ -305,6 +305,6 @@ export const SPACING = {
   horizontal: 380, // base X offset between elements (adjusted per speed)
   startOffset: 800, // delay before first element appears (in px, ~0.5 screen)
   verticalMin: 60, // minimum Y position
-  verticalMax: 600, // maximum Y position (adjust based on viewport height)
+  verticalMax: 900, // maximum Y position (adjust based on viewport height)
   verticalWave: 240, // amplitude of vertical wave distribution
 };
